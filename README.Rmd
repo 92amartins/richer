@@ -1,0 +1,49 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# convexity
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of convexity is to provide hints for stock market investments.
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("92amartins/convexity")
+```
+
+## Examples
+
+Here are some use cases supported by the package.
+
+Using the `stock()` function, you get back a `data.frame` suitable for any financial analysis.
+
+```{r stock, warning=FALSE}
+library(convexity)
+
+vale = stock("VALE3.SA")
+
+tail(vale)[1:5]
+```
+
+You can also get an investment hint for a specific stock by calling the function `hint()`.
+```{r hint}
+hint("VALE3.SA")
+```

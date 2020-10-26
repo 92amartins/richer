@@ -16,4 +16,7 @@ RoxygenNote: 7.1.1
 Suggests:
     testthat
 Imports:
-    quantmod
+    quantmod,
+    tibble,
+    magrittr,
+    dplyr

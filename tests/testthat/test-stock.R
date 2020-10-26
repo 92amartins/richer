@@ -1,7 +1,7 @@
 test_that("stock() returns historical price data", {
   stock_code <- c("VALE3.SA")
-  expected_columns <- c("VALE3.SA.Open", "VALE3.SA.High", "VALE3.SA.Low",
-                        "VALE3.SA.Close", "VALE3.SA.Volume", "VALE3.SA.Adjusted")
+  expected_columns <- c("Date", "Open", "High", "Low",
+                        "Close", "Volume", "Adjusted")
 
   vale3 <- stock(stock_code)
 

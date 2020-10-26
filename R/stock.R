@@ -11,6 +11,12 @@
 #' @examples
 #' stock("VALE3.SA")
 stock <- function(stock_code) {
-  stock_data <- quantmod::getSymbols(stock_code, src="yahoo", auto.assign = FALSE)
-  as.data.frame(stock_data)
+  stock_data <- quantmod::getSymbols(stock_code, src="yahoo", auto.assign = FALSE) %>%
+    as.data.frame() %>%
+    dplyr::rename_with(
+      function(x) gsub(paste0(stock_code,"."), "", x=x)
+    ) %>%
+    tibble::rownames_to_column("Date")
+
+  stock_data
 }

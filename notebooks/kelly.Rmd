@@ -1,0 +1,42 @@
+---
+title: "Exploring Kelly"
+output:
+  html_notebook: default
+  pdf_document: default
+---
+
+This notebook brings a exploration of the Kelly's criterion applied to the "MGLU3" stock. It considers the last 12 months of stock price variation and a baseline return rate of 2% a year.
+
+```{r, message=FALSE}
+library(convexity)
+library(tidyverse)
+```
+
+```{r message=FALSE, warning=FALSE}
+mglu <- stock("MGLU3.SA")
+head(mglu)
+```
+```{r}
+variations <- mglu %>%
+  mutate(Month = lubridate::floor_date(as.Date(Date), "month")) %>%
+  group_by(Month) %>%
+  mutate(rank = rank(Date)) %>%
+  filter(rank == 1) %>%
+  ungroup(Month) %>%
+  mutate(Var = (Close - lag(Close)) / lag(Close)) %>%
+  filter(Date >= '2019-10-26') %>%
+  select(Date, Close, Var)
+variations
+```
+
+```{r}
+mi = mean(variations$Var)
+sigma = sd(variations$Var)
+mi
+sigma
+```
+```{r}
+baseline_return <- 0.02 / 12
+criterion <- (mi - baseline_return) / sigma
+criterion
+```

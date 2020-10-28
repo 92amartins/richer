@@ -20,4 +20,6 @@ Imports:
     tibble,
     magrittr,
     dplyr,
-    lubridate
+    lubridate,
+    ggplot2,
+    scales

@@ -41,7 +41,7 @@ add_monthly_variation <- function(stock_data, start_date) {
     mutate(Month = lubridate::floor_date(as.Date(Date), "month")) %>%
     group_by(Month) %>%
     mutate(rank = rank(Date)) %>%
-    filter(rank == 1) %>%
+    filter(rank == max(rank)) %>%
     ungroup(Month) %>%
     mutate(Variation = (Close - lag(Close)) / lag(Close)) %>%
     filter(Date >= start_date) %>%

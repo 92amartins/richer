@@ -7,8 +7,7 @@ Authors@R:
         person("Rodrigo", "Bonisem", role = "aut", email = "r.bonisem@gmail.com")
     )
 Description: Provides hints on whether one should buy, hold or sell a specific stock.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Environment
+        uses: r-lib/actions/setup-r@v1
+
+      - name: Install System Dependencies
+        run: sudo apt-get install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev
+
+      - name: Install devtools
+        run: install.packages("devtools")
+        shell: Rscript {0}
+
+      - name: Build
+        run: devtools::install()
+        shell: Rscript {0}
+
+      - name: Check
+        run: devtools::check()
+        shell: Rscript {0}

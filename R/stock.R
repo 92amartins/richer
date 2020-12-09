@@ -21,11 +21,12 @@ stock <- function(stock_code) {
   stock_data
 }
 
-#' Return monthly variation of a asset
+#' Return monthly variation of an asset
 #'
-#' Given a `stock_data` data.frame, increment data with a `Variation`.
+#' Given a `stock_data` data.frame, increment data with a `Variation` column.
 #'
 #' @param stock_data data.frame
+#' @param start_date character
 #'
 #' @import dplyr
 #'

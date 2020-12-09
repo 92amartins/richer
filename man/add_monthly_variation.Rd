@@ -2,18 +2,20 @@
 % Please edit documentation in R/stock.R
 \name{add_monthly_variation}
 \alias{add_monthly_variation}
-\title{Return monthly variation of a asset}
+\title{Return monthly variation of an asset}
 \usage{
 add_monthly_variation(stock_data, start_date)
 }
 \arguments{
 \item{stock_data}{data.frame}
+
+\item{start_date}{character}
 }
 \value{
 data.frame
 }
 \description{
-Given a \code{stock_data} data.frame, increment data with a \code{Variation}.
+Given a \code{stock_data} data.frame, increment data with a \code{Variation} column.
 }
 \examples{
 raw_stock = stock("VALE3.SA")

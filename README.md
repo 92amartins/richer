@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![Codecov test
-coverage](https://codecov.io/gh/92amartins/convexity/branch/master/graph/badge.svg)](https://codecov.io/gh/92amartins/convexity?branch=master)
+![convexity-ci](https://github.com/92amartins/convexity/workflows/ci/badge.svg)
+[![codecov](https://codecov.io/gh/92amartins/convexity/branch/master/graph/badge.svg?token=0DPGPGX98O)](https://codecov.io/gh/92amartins/convexity)
 <!-- badges: end -->
 
 The goal of convexity is to provide hints for stock market investments.

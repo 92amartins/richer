@@ -48,3 +48,31 @@ add_monthly_variation <- function(stock_data, start_date) {
     filter(Date >= start_date) %>%
     select(Month, Close, Variation)
 }
+
+#' Return weekly variation of an asset
+#'
+#' Given a `stock_data` data.frame, increment data with a `Weekly_Variation` column.
+#'
+#' @param stock_data data.frame
+#' @param start_date character
+#'
+#' @import dplyr
+#'
+#' @return data.frame
+#'
+#' @export
+#'
+#' @examples
+#' raw_stock = stock("VALE3.SA")
+#' add_weekly_variation(raw_stock, '2019-10-26')
+add_weekly_variation <- function(stock_data, start_date) {
+  stock_data %>%
+    mutate(Week = lubridate::isoweek(as.Date(Date))) %>%
+    group_by(Week) %>%
+    mutate(rank = rank(Date)) %>%
+    filter(rank == max(rank)) %>%
+    ungroup(Week) %>%
+    mutate(Variation = (Close - lag(Close)) / lag(Close)) %>%
+    filter(Date >= start_date) %>%
+    select(Date, Week, Close, Variation)
+}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/graph.R
 \name{graph}
 \alias{graph}
-\title{Display a graph of an asset variation overtime}
+\title{Display a graph of an asset variation over months}
 \usage{
 graph(stock_code, start_date)
 }
@@ -12,10 +12,10 @@ graph(stock_code, start_date)
 \item{start_date}{character}
 }
 \value{
-NA
+ggplot object
 }
 \description{
-Display a graph of an asset variation overtime
+Display a graph of an asset variation over months
 }
 \examples{
 graph("VALE3.SA", "2019-10-31")

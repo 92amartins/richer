@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![codecov](https://codecov.io/gh/92amartins/convexity/branch/master/graph/badge.svg?token=0DPGPGX98O)](https://codecov.io/gh/92amartins/convexity)
 <!-- badges: end -->
 
-The goal of convexity is to provide hints for stock market investments.
+Useful functions for stock market investments.
 
 ## Installation
 
@@ -49,6 +49,19 @@ You can also get an investment hint for a specific stock by calling the function
 ```{r hint}
 hint("VALE3.SA")
 ```
+
+
+## Related Packages
+
+`GetHFData` have long been my first choice for fetching trading data, but
+the package does not work anymore as of early 2020 because of a issue with
+with the B3's FTP service.
+
+> _2020-06-30 IMPORTANT: B3 closed the public access to the ftp site and, therefore, the package is not working. As far as I know, there is no expectation of any change in that status in the near future. I'm also not aware of any other source of HF data._
+
+So, we headed our attention to `quantmod` which fetches data from multiple sources:
+
+> _quantmod is an R package that provides a framework for quantitative financial modeling and trading. It provides a rapid prototyping environment that makes modeling easier by removing the repetitive workflow issues surrounding data management and visualization._
 
 ## Acknowledgments
 Thanks to Rodrigo Bonisem for initial discussions on this project.

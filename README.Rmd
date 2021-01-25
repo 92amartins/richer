@@ -26,7 +26,7 @@ The goal of convexity is to provide hints for stock market investments.
 
 You can install the development version from [GitHub](https://github.com/) with:
 
-``` r
+```r
 # install.packages("devtools")
 devtools::install_github("92amartins/convexity")
 ```
@@ -37,7 +37,7 @@ Here are some use cases supported by the package.
 
 Using the `stock()` function, you get back a `data.frame` suitable for any financial analysis.
 
-```{r stock, warning=FALSE}
+```{r stock, message=FALSE, warning=FALSE}
 library(convexity)
 
 vale = stock("VALE3.SA")
@@ -49,3 +49,6 @@ You can also get an investment hint for a specific stock by calling the function
 ```{r hint}
 hint("VALE3.SA")
 ```
+
+## Acknowledgments
+Thanks to Rodrigo Bonisem for initial discussions on this project.

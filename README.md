@@ -32,26 +32,15 @@ any financial analysis.
 library(convexity)
 
 vale = stock("VALE3.SA")
-#> Registered S3 method overwritten by 'quantmod':
-#>   method            from
-#>   as.zoo.data.frame zoo
-#> 'getSymbols' currently uses auto.assign=TRUE by default, but will
-#> use auto.assign=FALSE in 0.5-0. You will still be able to use
-#> 'loadSymbols' to automatically load data. getOption("getSymbols.env")
-#> and getOption("getSymbols.auto.assign") will still be checked for
-#> alternate defaults.
-#> 
-#> This message is shown once per session and may be disabled by setting 
-#> options("getSymbols.warning4.0"=FALSE). See ?getSymbols for details.
 
 tail(vale)[1:5]
 #>            Date  Open  High   Low Close
-#> 3454 2020-12-04 80.10 82.68 80.10 82.27
-#> 3455 2020-12-07 82.42 82.99 81.67 82.95
-#> 3456 2020-12-08 82.97 83.30 81.66 82.90
-#> 3457 2020-12-09 83.10 83.83 82.22 82.70
-#> 3458 2020-12-10 83.65 85.22 83.20 85.00
-#> 3459 2020-12-11 84.62 85.28 84.40 84.76
+#> 3480 2021-01-15 96.58 97.20 93.51 93.85
+#> 3481 2021-01-18 93.90 95.64 93.55 94.31
+#> 3482 2021-01-19 94.50 94.57 91.90 94.06
+#> 3483 2021-01-20 95.00 95.14 90.83 92.32
+#> 3484 2021-01-21 92.30 96.10 92.14 93.36
+#> 3485 2021-01-22 91.99 93.00 90.99 92.63
 ```
 
 You can also get an investment hint for a specific stock by calling the
@@ -61,3 +50,7 @@ function `hint()`.
 hint("VALE3.SA")
 #> [1] "buy"
 ```
+
+## Acknowledgments
+
+Thanks to Rodrigo Bonisem for initial discussions on this project.

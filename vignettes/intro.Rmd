@@ -1,0 +1,93 @@
+---
+title: "Introduction to richer"
+author: "Andrei Martins"
+date: "2021-01-25"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to richer}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options("getSymbols.warning4.0"=FALSE)
+ggplot2::theme_set(hrbrthemes::theme_ft_rc())
+```
+
+`richer` is a R package that provides useful functions for people who are willing
+to invest in the stock market.
+
+In this document we give an overview of the most important functions and common
+workflows.
+
+
+```{r setup, message=FALSE}
+library(convexity)
+library(dplyr)
+```
+
+## Stock Data
+
+`richer` provides the `stock` function which allows, fetching historical stock
+prices from Yahoo Finance. You just need to inform the [stock code](https://finance.yahoo.com/quote/PETR4.SA?p=PETR4.SA).
+
+```{r stock, warning=FALSE, message=FALSE}
+petr4_prices <- stock("PETR4.SA")
+print(paste(nrow(petr4_prices), "records."))
+knitr::kable(head(petr4_prices))
+```
+From this point, you are free to carry out any sort of data analysis.
+
+## Aggregations
+
+The package provides a few aggregations that may come handy:
+`add_monthly_variation` and `add_weekly_variation`. As their
+names indicate, they provide price variation over months or
+weeks respectively.
+
+Both functions take a data.frame containing the stock prices
+and a `start_date` as arguments. Then, they compute variations
+from `start_date` to the current date.
+
+Let's compute the monthly variations of `PETR4.SA` from 2020-01-01
+to 2021-01-25 (the date this document was written.)
+
+```{r agg_monthly}
+petr4_prices %>%
+  add_monthly_variation("2020-01-01") %>%
+  knitr::kable()
+```
+Likewise, `add_weehly_variation` return weekly variations from the `start_date`
+to the current date.
+
+```{r agg_weekly}
+petr4_prices %>%
+  add_weekly_variation("2021-01-01") %>%
+  knitr::kable()
+```
+
+## Graphs
+
+Building upon the aggregation functions described above, the package
+offers two functions for easy visualization: `graph` and `weekly graph`.
+
+The former plots a graph of *monthly variations* overtime and the latter
+do the same with *weekly variations*.
+
+
+```{r graph, warning=FALSE, fig.width=7, fig.height=6}
+graph("PETR4.SA", "2020-06-01")
+```
+
+```{r weekly_graph, warning=FALSE, fig.width=7, fig.height=6}
+weekly_graph("PETR4.SA", "2021-01-01")
+```
+
+This document showcased the most important functions provided by `richer`.
+For a full list of functions, install the package and type ` help(package="richer")`.
+
+

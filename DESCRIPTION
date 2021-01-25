@@ -17,8 +17,7 @@ Imports:
     magrittr,
     quantmod,
     scales,
-    tibble,
-    hrbrthemes
+    tibble
 Suggests:
     testthat,
     covr

@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-![convexity-ci](https://github.com/92amartins/convexity/workflows/ci/badge.svg)
+![build](https://github.com/92amartins/convexity/workflows/build/badge.svg)
 [![codecov](https://codecov.io/gh/92amartins/convexity/branch/master/graph/badge.svg?token=0DPGPGX98O)](https://codecov.io/gh/92amartins/convexity)
 <!-- badges: end -->
 
@@ -48,7 +48,7 @@ function `hint()`.
 
 ``` r
 hint("VALE3.SA")
-#> [1] "buy"
+#> [1] "sell"
 ```
 
 ## Acknowledgments

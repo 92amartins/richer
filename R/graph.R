@@ -20,13 +20,12 @@ graph <- function(stock_code, start_date) {
 
   ggplot(asset, aes(Month, Variation, color=Sign, fill=Sign)) +
     geom_bar(position=position_dodge(), stat='identity') +
-    geom_text(aes(label = sprintf("%0.2f", round(Variation, digits = 2))), color="white", size = 4, vjust = 1.2) +
+    geom_text(aes(label = sprintf("%0.2f", round(Variation, digits = 2))), color="black", size = 4, vjust = 1.2) +
     labs(
       title = stock_code,
       subtitle = "Monthly Variation",
       caption = "Source: Yahoo Finance (powered by quantmod)."
     ) +
-    theme_dark() +
     theme(legend.position = "none") +
     scale_x_date(labels = date_format("%b-%Y"), date_breaks = "1 month")
 }
@@ -53,13 +52,12 @@ weekly_graph <- function(stock_code, start_date) {
 
   ggplot(asset, aes(Week, Variation, color=Sign, fill=Sign)) +
     geom_bar(position=position_dodge(), stat='identity') +
-    geom_text(aes(label = sprintf("%0.2f", round(Variation, digits = 2))), color="white", size = 4, vjust = 1.2) +
+    geom_text(aes(label = sprintf("%0.2f", round(Variation, digits = 2))), color="black", size = 4, vjust = 1.2) +
     labs(
       title = stock_code,
       subtitle = "Weekly Variation",
       caption = "Source: Yahoo Finance (powered by quantmod)."
     ) +
-    theme_dark() +
     theme(legend.position = "none") +
     scale_x_date(labels = date_format("%U-%Y"), date_breaks = "7 days")
 }

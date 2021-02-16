@@ -13,22 +13,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-# convexity
+# richer
 
 <!-- badges: start -->
-![build](https://github.com/92amartins/convexity/workflows/build/badge.svg)
-[![codecov](https://codecov.io/gh/92amartins/convexity/branch/master/graph/badge.svg?token=0DPGPGX98O)](https://codecov.io/gh/92amartins/convexity)
+![build](https://github.com/92amartins/richer/workflows/build/badge.svg)
+[![codecov](https://codecov.io/gh/92amartins/richer/branch/master/graph/badge.svg?token=0DPGPGX98O)](https://codecov.io/gh/92amartins/richer)
 <!-- badges: end -->
 
 Useful functions for stock market investments.
 
 ## Installation
 
-You can install the development version from [GitHub](https://github.com/) with:
+You can install the development version from [GitHub](https://github.com/92amartins/richer) with:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("92amartins/convexity")
+devtools::install_github("92amartins/richer")
 ```
 
 ## Examples
@@ -38,11 +38,11 @@ Here are some use cases supported by the package.
 Using the `stock()` function, you get back a `data.frame` suitable for any financial analysis.
 
 ```{r stock, message=FALSE, warning=FALSE}
-library(convexity)
+library(richer)
 
 vale = stock("VALE3.SA")
 
-tail(vale)[1:5]
+head(vale)
 ```
 
 You can also get an investment hint for a specific stock by calling the function `hint()`.

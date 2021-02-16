@@ -1,4 +1,4 @@
 library(testthat)
-library(convexity)
+library(richer)
 
-test_check("convexity")
+test_check("richer")

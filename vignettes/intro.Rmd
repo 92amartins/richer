@@ -26,7 +26,7 @@ workflows.
 
 
 ```{r setup, message=FALSE}
-library(convexity)
+library(richer)
 library(dplyr)
 ```
 

@@ -1,4 +1,4 @@
-Package: convexity
+Package: richer
 Title: Hints on Financial Assets
 Version: 0.0.0.9000
 Authors@R: person("Andrei", "Martins", role = c("aut", "cre"), email = "92amartins@gmail.com")
@@ -9,8 +9,8 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
-URL: https://github.com/92amartins/convexity
-BugReports: https://github.com/92amartins/convexity/issues
+URL: https://github.com/92amartins/richer
+BugReports: https://github.com/92amartins/richer/issues
 Imports:
     dplyr,
     ggplot2,
